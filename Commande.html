@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande</title>
+     <style>
+        body{
+    background-color: palevioletred;
+    color: rgb(12, 1, 1); 
+   
+
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 350px;
+    border-radius: 10px;
+    background-color:pink;
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(red, green, blue, alpha);
+    font-family: Arial, sans-serif;
+    border-radius: 35px;
+}
+div h2
+{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+div label
+{
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color:black;
+    width: 80%;
+}
+div input
+{
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    transform: border-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 80%;
+}
+div input:focus{
+    border-color: #007BFF;
+    outline: none;
+}
+div button{
+    right: 50%;
+    padding: 7px;
+
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor:pointer;
+    transition: background 0.3s;
+}
+div button:hover{
+    background: #0056b3;
+}
+.iii{
+    background-color: pink;
+}
+    </style>
+</head>
+<body>
+    <form onsubmit="SendToWhatsapp(event)">
+        <div>
+            <legend><b>Passer votre commande 😊</b></legend><br>
+            
+            <label for="Nominput">Nom</label>
+            <input type="text" id="Nominput" placeholder="Nom" required><br>
+            
+            <label for="Téléphoneinput">Téléphone</label>
+            <input type="text" id="Téléphoneinput" placeholder="Téléphone" required><br>
+
+            <label for="Commande">Ta commande</label>
+            <textarea class="iii" id="commande" placeholder="Commande (ex: Maillot rouge taille L)" required></textarea><br><br>
+            
+            <button type="submit" name="Send" id="Send">Envoyer la commande</button>
+        </div>
+    </form>
+
+    <script>
+        function SendToWhatsapp(e){
+            e.preventDefault();
+            
+            let Nom = document.getElementById("Nominput").value.trim();
+            let Téléphone = document.getElementById("Téléphoneinput").value.trim();
+            let Commande = document.getElementById("commande").value.trim();
+            
+            // Message clair et lisible
+            let message = `🛒 Nouvelle commande\n\nNom : ${Nom}\nTéléphone : ${Téléphone}\nCommande : ${Commande}`;
+            
+            let numeroRestaurant = "22950024222"; // Ton numéro WhatsApp
+            let url = "https://wa.me/" + numeroRestaurant + "?text=" + encodeURIComponent(message);
+            
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+
+</html>

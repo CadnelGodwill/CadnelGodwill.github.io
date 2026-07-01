@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalise</title>
+     <style> 
+     body{
+        background-color: palevioletred;
+     }
+        form{
+            background-color: skyblue;
+            border: 2px solid;
+            border-radius: 20px;
+            display: inline-block;
+            padding: 20px;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column;
+             height: 350px;
+             border-radius: 10px;
+             background-color:pink;
+             max-width: 300px;
+             margin: 50px auto;
+             padding: 20px;
+             border-radius: 8px;
+             
+             font-family: Arial, sans-serif;
+             border-radius: 35px;
+        }
+        h3{
+            text-align: center;
+            color: black;
+            text-decoration: underline;
+        }
+        .nom{
+            outline: none;
+            background-color: pink;
+            color: black;
+        }
+        .aaa{
+            background-color: pink;
+        }
+        .ppp{
+            background-color: pink;
+            color: black;
+        }
+        .www{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="SendToWhatsapp(event)">
+        <div>
+            <h3 class="titre">Personalise ton maillot 😉</h3>
+            <fieldset>
+                <legend>Mon style à moi</legend> <br>
+                
+                <input type="text" id="Nominput" placeholder="Nom du maillot" class="nom"><br><br>
+                
+                <select class="aaa" id="tailles">
+                    <option value="S">S</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select><br><br>
+                
+                <textarea class="ppp" id="NomNum" placeholder="Nom et numéro"></textarea><br><br>
+                
+                <input class="www" type="submit" value="Envoyer">
+            </fieldset>
+        </div>
+    </form>
+
+    <script>
+        function SendToWhatsapp(e){
+            e.preventDefault();
+            
+            let Nom = document.getElementById("Nominput").value.trim();
+            let NomNum = document.getElementById("NomNum").value.trim();
+            let Taille = document.getElementById("tailles").value;
+            
+            // Validation simple
+            if(!Nom || !NomNum || !Taille){
+                alert("Merci de remplir tous les champs avant d'envoyer !");
+                return;
+            }
+            
+            let message = `📝 Personnalisation du maillot\n\nNom du maillot : ${Nom}\nNom & Numéro : ${NomNum}\nTaille : ${Taille}`;
+            
+            let numeroRestaurant = "22950024222"; // Ton numéro WhatsApp
+            let url = "https://wa.me/" + numeroRestaurant + "?text=" + encodeURIComponent(message);
+            
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+
+</html>
