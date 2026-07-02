@@ -5,65 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inaya FASHION</title>
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; padding-bottom: 80px; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; padding-bottom: 80px; text-align: center; }
         nav {
-            display: flex;
-            justify-content: space-between;
-            background-color: palevioletred;
-            border-radius: 8px;
-            padding: 0 20px;
-            align-items: center;
+            display: flex; justify-content: space-between; background-color: palevioletred;
+            border-radius: 8px; padding: 10px 20px; align-items: center;
         }
-        nav h2 a { color: white; text-decoration: none; }
-        ul { list-style: none; display: flex; align-items: center; gap: 30px; padding: 0; }
-        nav ul li a { color: white; font-weight: bold; text-decoration: none; transition: 0.3s; }
+        nav h2 a { color: white; text-decoration: none; font-size: 24px; }
+        ul { list-style: none; display: flex; align-items: center; gap: 25px; padding: 0; margin: 0; }
+        nav ul li a { color: white; font-weight: bold; text-decoration: none; transition: 0.3s; font-size: 16px; }
         nav ul li a:hover { text-decoration: underline; color: aqua; }
-        main { padding: 20px; text-align: center; }
-        main h1 { text-align: center; }
+        main { padding: 30px 20px; }
+        main h1 { font-size: 28px; }
         .PPP { font-size: 20px; max-width: 700px; margin: 10px auto; }
-        
-        .grille {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
+        .maillot-item {
+            margin: 30px auto; max-width: 400px; background: white; padding: 15px;
+            border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .maillot {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            padding: 15px;
-            text-align: center;
-        }
-        .maillot img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .maillot h3 { margin: 10px 0 5px 0; }
-        .maillot p { margin: 5px 0 15px 0; color: #333; font-weight: bold; font-size: 18px; }
+        .maillot-item img { width: 100%; max-width: 350px; height: auto; border-radius: 8px; }
+        .prix { font-weight: bold; font-size: 18px; color: #333; }
         .btn-whatsapp {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+            display: inline-block; background: #25D366; color: white; padding: 10px 20px;
+            border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s;
         }
         .btn-whatsapp:hover { background: #1ebe5b; }
         footer {
-            background-color: palevioletred;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            background-color: palevioletred; color: white; text-align: center; padding: 15px;
+            position: fixed; bottom: 0; width: 100%;
         }
     </style>
 </head>
@@ -71,63 +38,49 @@
 <nav>
     <h2><a href="index.html"><em>Inaya</em> FASHION 😊</a></h2>
     <ul>
-        <li><a href="#maillots">Nos maillots</a></li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Personnalise.html">Personnalise</a></li>
+        <li><a href="Commande.html">Commande</a></li>
         <li><a href="Info.html">Info</a></li>
     </ul>
 </nav>
 
 <main>
     <h1><em>Bienvenue chez <mark>Inaya FASHION 😊.</mark></em></h1>
-    <p class="PPP"><em>Maillots officiels des plus grands clubs et nations. Real Madrid, PSG, Barcelone, France, Sénégal, Espagne, OM etc...</em></p>
-    <p><b>Qualité stade, flocage nom + numéro offert, tailles du S au XXL. Prix: 15,000 FCFA</b></p>
+    <p class="PPP"><em>Maillots officiels des plus grands clubs et nations.</em></p>
+    <p><b>Qualité stade, flocage nom + numéro offert, tailles S au XXL. Prix: 15,000 FCFA</b></p>
+
+    <div class="maillot-item">
+        <img src="pinterest_1782253818270(1).jpg" alt="Maillot 1">
+        <h3>Maillot Club 1</h3> <p class="prix">15,000 FCFA</p>
+        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%201.%20Taille%20:%20S/M/L/XL/XXL%20?">Commander</a>
+    </div>
+    <div class="maillot-item">
+        <img src="pinterest_1782253818270.jpg" alt="Maillot 2">
+        <h3>Maillot Club 2</h3> <p class="prix">15,000 FCFA</p>
+        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%202.%20Taille%20:%20S/M/L/XL/XXL%20?">Commander</a>
+    </div>
+    <div class="maillot-item">
+        <img src="pinterest_1782253852316.jpg" alt="Maillot 3">
+        <h3>Maillot Club 3</h3> <p class="prix">15,000 FCFA</p>
+        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%203.%20Taille%20:%20S/M/L/XL/XXL%20?">Commander</a>
+    </div>
+    <div class="maillot-item">
+        <img src="pinterest_1782253892401.jpg" alt="Maillot 4">
+        <h3>Maillot Club 4</h3> <p class="prix">15,000 FCFA</p>
+        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%204.%20Taille%20:%20S/M/L/XL/XXL%20?">Commander</a>
+    </div>
+    <div class="maillot-item">
+        <img src="pinterest_1782253912049.jpg" alt="Maillot 5">
+        <h3>Maillot Club 5</h3> <p class="prix">15,000 FCFA</p>
+        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%205.%20Taille%20:%20S/M/L/XL/XXL%20?">Commander</a>
+    </div>
+    <div class="maillot-item">
+        <img src="Puma_-_Maillot_OM_domicile_2025_26.jpg" alt="Maillot OM">
+        <h3>Maillot OM Domicile 2025/26</h3> <p class="prix">15,000 FCFA</p>
+        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%20OM.%20Taille%20:%20S/M/L/XL/XXL%20?">Commander</a>
+    </div>
 </main>
-
-<section id="maillots" class="grille">
-    <div class="maillot">
-        <img src="maillot1.jpg" alt="Maillot 1">
-        <h3>Maillot Club 1</h3>
-        <p>15,000 FCFA</p>
-        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%201">Commander</a>
-    </div>
-
-    <div class="maillot">
-        <img src="maillot2.jpg" alt="Maillot 2">
-        <h3>Maillot Club 2</h3>
-        <p>15,000 FCFA</p>
-        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%202">Commander</a>
-    </div>
-
-    <div class="maillot">
-        <img src="maillot3.jpg" alt="Maillot 3">
-        <h3>Maillot Club 3</h3>
-        <p>15,000 FCFA</p>
-        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%203">Commander</a>
-    </div>
-
-    <div class="maillot">
-        <img src="maillot4.jpg" alt="Maillot 4">
-        <h3>Maillot Club 4</h3>
-        <p>15,000 FCFA</p>
-        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%204">Commander</a>
-    </div>
-
-    <div class="maillot">
-        <img src="maillot5.jpg" alt="Maillot 5">
-        <h3>Maillot Club 5</h3>
-        <p>15,000 FCFA</p>
-        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%205">Commander</a>
-    </div>
-
-    <div class="maillot">
-        <img src="maillot6.jpg" alt="Maillot OM">
-        <h3>Maillot OM Domicile 2025/26</h3>
-        <p>15,000 FCFA</p>
-        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20le%20Maillot%20OM">Commander</a>
-    </div>
-</section>
-
-<footer>
-    &copy;2026. Inaya FASHION - Tous droits réservés. WhatsApp: +229 50 02 42 22
-</footer>
+<footer>&copy;2026. Inaya FASHION - WhatsApp: +229 50 02 42 22</footer>
 </body>
 </html>
