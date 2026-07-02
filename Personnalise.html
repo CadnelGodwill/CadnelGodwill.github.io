@@ -1,101 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personalise</title>
-     <style> 
-     body{
-        background-color: palevioletred;
-     }
-        form{
-            background-color: skyblue;
-            border: 2px solid;
-            border-radius: 20px;
-            display: inline-block;
-            padding: 20px;
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             flex-direction: column;
-             height: 350px;
-             border-radius: 10px;
-             background-color:pink;
-             max-width: 300px;
-             margin: 50px auto;
-             padding: 20px;
-             border-radius: 8px;
-             
-             font-family: Arial, sans-serif;
-             border-radius: 35px;
-        }
-        h3{
-            text-align: center;
-            color: black;
-            text-decoration: underline;
-        }
-        .nom{
-            outline: none;
-            background-color: pink;
-            color: black;
-        }
-        .aaa{
-            background-color: pink;
-        }
-        .ppp{
-            background-color: pink;
-            color: black;
-        }
-        .www{
-            background-color: pink;
-        }
+    <title>Personnaliser - Inaya FASHION</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; padding-bottom: 80px; text-align: center; }
+        nav { display: flex; justify-content: space-between; background-color: palevioletred; border-radius: 8px; padding: 10px 20px; align-items: center; }
+        nav h2 a { color: white; text-decoration: none; font-size: 24px; }
+        ul { list-style: none; display: flex; align-items: center; gap: 25px; padding: 0; margin: 0; }
+        nav ul li a { color: white; font-weight: bold; text-decoration: none; transition: 0.3s; font-size: 16px; }
+        nav ul li a:hover { text-decoration: underline; color: aqua; }
+        main { padding: 40px 20px; max-width: 600px; margin: auto; }
+        .box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        footer { background-color: palevioletred; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; }
     </style>
 </head>
 <body>
-    <form onsubmit="SendToWhatsapp(event)">
-        <div>
-            <h3 class="titre">Personalise ton maillot 😉</h3>
-            <fieldset>
-                <legend>Mon style à moi</legend> <br>
-                
-                <input type="text" id="Nominput" placeholder="Nom du maillot" class="nom"><br><br>
-                
-                <select class="aaa" id="tailles">
-                    <option value="S">S</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                </select><br><br>
-                
-                <textarea class="ppp" id="NomNum" placeholder="Nom et numéro"></textarea><br><br>
-                
-                <input class="www" type="submit" value="Envoyer">
-            </fieldset>
-        </div>
-    </form>
-
-    <script>
-        function SendToWhatsapp(e){
-            e.preventDefault();
-            
-            let Nom = document.getElementById("Nominput").value.trim();
-            let NomNum = document.getElementById("NomNum").value.trim();
-            let Taille = document.getElementById("tailles").value;
-            
-            // Validation simple
-            if(!Nom || !NomNum || !Taille){
-                alert("Merci de remplir tous les champs avant d'envoyer !");
-                return;
-            }
-            
-            let message = `📝 Personnalisation du maillot\n\nNom du maillot : ${Nom}\nNom & Numéro : ${NomNum}\nTaille : ${Taille}`;
-            
-            let numeroRestaurant = "22950024222"; // Ton numéro WhatsApp
-            let url = "https://wa.me/" + numeroRestaurant + "?text=" + encodeURIComponent(message);
-            
-            window.open(url, "_blank");
-        }
-    </script>
+<nav>
+    <h2><a href="index.html"><em>Inaya</em> FASHION 😊</a></h2>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Personnalise.html">Personnalise</a></li>
+        <li><a href="Commande.html">Commande</a></li>
+        <li><a href="Info.html">Info</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="box">
+        <h1>Personnalise ton maillot ✍️</h1>
+        <p>Ajoute ton nom et numéro gratuitement sur tous nos maillots.</p>
+        <p><b>Exemple:</b> MBAPPÉ 10, MESSI 30, TON NOM 7</p>
+        <p>Envoie-nous sur WhatsApp le maillot + nom + numéro + taille.</p>
+        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20personnaliser%20un%20maillot">Commander sur WhatsApp</a>
+    </div>
+</main>
+<footer>&copy;2026. Inaya FASHION</footer>
 </body>
-
 </html>
