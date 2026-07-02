@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personnaliser - Inaya FASHION</title>
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; padding-bottom: 80px; text-align: center; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; padding-bottom: 80px; }
         nav { display: flex; justify-content: space-between; background-color: palevioletred; border-radius: 8px; padding: 10px 20px; align-items: center; }
         nav h2 a { color: white; text-decoration: none; font-size: 24px; }
         ul { list-style: none; display: flex; align-items: center; gap: 25px; padding: 0; margin: 0; }
         nav ul li a { color: white; font-weight: bold; text-decoration: none; transition: 0.3s; font-size: 16px; }
         nav ul li a:hover { text-decoration: underline; color: aqua; }
-        main { padding: 40px 20px; max-width: 600px; margin: auto; }
+        main { padding: 40px 20px; max-width: 500px; margin: auto; }
         .box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        .box h1 { text-align: center; margin-top: 0; }
+        label { display: block; text-align: left; margin: 15px 0 5px 0; font-weight: bold; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
+        .btn-submit {
+            width: 100%; background: #25D366; color: white; padding: 12px; border: none;
+            border-radius: 8px; font-weight: bold; font-size: 16px; margin-top: 20px; cursor: pointer;
+        }
         footer { background-color: palevioletred; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; }
     </style>
 </head>
@@ -21,21 +27,60 @@
 <nav>
     <h2><a href="index.html"><em>Inaya</em> FASHION 😊</a></h2>
     <ul>
-        <li><a href="index.html">Accueil</a></li>
         <li><a href="Personnalise.html">Personnalise</a></li>
-        <li><a href="Commande.html">Commande</a></li>
         <li><a href="Info.html">Info</a></li>
     </ul>
 </nav>
 <main>
     <div class="box">
         <h1>Personnalise ton maillot ✍️</h1>
-        <p>Ajoute ton nom et numéro gratuitement sur tous nos maillots.</p>
-        <p><b>Exemple:</b> MBAPPÉ 10, MESSI 30, TON NOM 7</p>
-        <p>Envoie-nous sur WhatsApp le maillot + nom + numéro + taille.</p>
-        <a class="btn-whatsapp" href="https://wa.me/22950024222?text=Bonjour%20Inaya%20FASHION,%20je%20veux%20personnaliser%20un%20maillot">Commander sur WhatsApp</a>
+        <form onsubmit="sendToWhatsApp(event)">
+            <label for="maillot">1. Choisis ton maillot</label>
+            <select id="maillot" required>
+                <option value="">-- Sélectionne --</option>
+                <option value="Maillot Club 1">Maillot Club 1</option>
+                <option value="Maillot Club 2">Maillot Club 2</option>
+                <option value="Maillot Club 3">Maillot Club 3</option>
+                <option value="Maillot Club 4">Maillot Club 4</option>
+                <option value="Maillot Club 5">Maillot Club 5</option>
+                <option value="Maillot OM Domicile 2025/26">Maillot OM Domicile 2025/26</option>
+            </select>
+
+            <label for="nom">2. Nom pour le flocage</label>
+            <input type="text" id="nom" placeholder="Ex: MBAPPÉ" required>
+
+            <label for="numero">3. Numéro</label>
+            <input type="number" id="numero" placeholder="Ex: 10" required>
+
+            <label for="taille">4. Taille</label>
+            <select id="taille" required>
+                <option value="">-- Sélectionne --</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+
+            <button type="submit" class="btn-submit">Envoyer la commande sur WhatsApp</button>
+        </form>
     </div>
 </main>
 <footer>&copy;2026. Inaya FASHION</footer>
+
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
+    let maillot = document.getElementById('maillot').value;
+    let nom = document.getElementById('nom').value;
+    let numero = document.getElementById('numero').value;
+    let taille = document.getElementById('taille').value;
+    
+    let message = Bonjour Inaya FASHION,%0A%0AJe veux personnaliser :%0A- Maillot : ${maillot}%0A- Nom : ${nom}%0A- Numéro : ${numero}%0A- Taille : ${taille}%0A%0APrix: 15,000 FCFA;
+    
+    let url = https://wa.me/22950024222?text=${message};
+    window.open(url, '_blank');
+}
+</script>
 </body>
 </html>
